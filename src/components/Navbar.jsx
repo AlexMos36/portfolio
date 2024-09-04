@@ -41,7 +41,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [scrolled]);
+  }, [scrolled, handleResize]);
 
   useEffect(() => {
     if (isOpen) {
