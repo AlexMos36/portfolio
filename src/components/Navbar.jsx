@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/logo.png"; // Make sure this path is correct
@@ -9,13 +9,13 @@ const Navbar = () => {
   const [showBurger, setShowBurger] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     if (window.innerWidth <= 768) {
       setShowBurger(true); // Always show burger menu on small screens
     } else {
       setShowBurger(scrolled); // Show burger only if scrolled on larger screens
     }
-  };
+  }, [scrolled]);
 
   useEffect(() => {
     handleResize();
@@ -41,7 +41,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, [scrolled, handleResize]);
+  }, [scrolled]);
 
   useEffect(() => {
     if (isOpen) {
