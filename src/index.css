@@ -1,0 +1,152 @@
+/* main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-[Dosis];
+    font-size: 16px; /* Base font size */
+    background-color: whitesmoke;
+  }
+
+  li {
+    @apply px-4 cursor-pointer;
+    list-style: none; /* Removes bullet points */
+  }
+
+  html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto;
+  }
+
+  a {
+    text-decoration: none; /* Clean up link styles */
+    color: inherit; /* Inherit the parent color */
+  }
+
+  button {
+    outline: none; /* Remove button outline */
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust based on your design */
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  @apply flex flex-col md:flex-row items-center justify-between mx-auto;
+  max-width: 1200px; /* Container max width */
+}
+
+/* Ensure buttons and inputs are responsive */
+button, input {
+  @apply px-4 py-2 rounded; /* Padding and rounded corners */
+}
+
+/*=============== MEDIA QUERIES ===============*/
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Slightly smaller base font size on smaller devices */
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Reduce heading size */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  .container {
+    padding: 0 1rem; /* Add padding to the container */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  button, input {
+    @apply w-full; /* Full-width buttons and inputs */
+  }
+}
+
+/* Optional: Slower smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
